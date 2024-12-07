@@ -24,8 +24,16 @@ const App = () => {
     return renderResult
   }
 
-  const Total = (partsList) => {
-    return <> Hello World</>
+  const Total = (props) => {
+    const partsList = props.partsList
+    const totalExercises = partsList.reduce((acc, part) => {
+      return acc + part.exercises
+    }, 0)
+    return <>
+      <p>
+        Number of exercises {totalExercises}
+      </p>
+    </>
   }
 
   const course = 'Half Stack application development'
